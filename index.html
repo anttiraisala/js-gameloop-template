@@ -1,0 +1,32 @@
+<html>
+<head>
+	<!-- https://github.com/webpack/webpack-dev-server/issues/1
+		Firefox: The character encoding of the HTML document was not declared
+	-->
+	<meta charset="utf-8"/>
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+	<script src="model.js"></script>
+	<script src="view.js"></script>
+	<script src="control.js"></script>
+</head>
+
+<title>
+	Simple JS Model-View -test
+</title>
+	<body>
+		<h1>
+			Simple JS Model-View -test
+		</h1>
+		<div class="v_ModelUpdateIndicator"></div>
+		<div class="v_ViewUpdateIndicator"></div>
+
+		<script type="text/javascript">
+			$().ready(function() {
+				var control = new Control();
+				control.init();
+			});
+		</script>
+
+	</body>
+
+</html>
