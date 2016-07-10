@@ -12,7 +12,7 @@ function Control(){
 	var now = Date.now();
 	var then = now-16;
 	var dt = 0.016;
-	var self = this;
+	//var self = this;
 
 	this.init = function(){
 		//alert("Control:init()");
@@ -27,12 +27,14 @@ function Control(){
 		now = Date.now();
 		dt = Math.min((now-then)/1000, 0.1);
 		model.update(dt);
-		setTimeout(self.modelTick, 0);
+		//setTimeout(self.modelTick, 0);
+		setTimeout(this.modelTick.bind(this), 0);
 		then = now;
 	};
 
 	this.viewTick = function(){
 		view.repaint();
-		requestAnimationFrame(self.viewTick);
+		//requestAnimationFrame(self.viewTick);
+		requestAnimationFrame(this.viewTick.bind(this));
 	};
 }
